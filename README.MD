@@ -17,11 +17,13 @@
 - [ ] Build and run the server
 
 
-        In order to pass values from go to javascript we need syscall/js package
 
-        HOWEVER, goland is prohibiting us from using syscall/js until we set default
 
-        OS and ARCH to JS, WASM
+In order to pass values from go to javascript we need syscall/js package
+
+HOWEVER, goland is prohibiting us from using syscall/js until we set default
+
+OS and ARCH to JS, WASM
 
 
 - [ ] Open up syscall/js under external libraries
@@ -48,13 +50,13 @@
 
 - [ ] Create a convert function
 
-        function convert() {
+     function convert() {
 
-            let input = document.querySelector('#input').value;
+         let input = document.querySelector('#input').value;
 
-            encrypt(input, output);
+         encrypt(input, output);
 
-        }
+     }
 
 - [ ] change button to be convert() and removed disabled
 
@@ -71,25 +73,25 @@
 - [ ] make an encrypt function
 
 
-     func encrypt (input []js.Value) {
+      func encrypt (input []js.Value) {
 
-        PrivateKey, _ := rsa.GenerateKey(rand.Reader, 1000)
+          PrivateKey, _ := rsa.GenerateKey(rand.Reader, 1000)
 
-        PublicKey := &PrivateKey.PublicKey
+          PublicKey := &PrivateKey.PublicKey
 
-        message := input[0].String()
+          message := input[0].String()
 
-        byteMessage := []byte(message)
+          byteMessage := []byte(message)
 
-        label := []byte("")
+          label := []byte("")
 
-        hash := sha256.New()
+          hash := sha256.New()
 
-        ciphertext, _ := rsa.EncryptOAEP(hash, rand.Reader, PublicKey, byteMessage, label)
+          ciphertext, _ := rsa.EncryptOAEP(hash, rand.Reader, PublicKey, byteMessage, label)
 
-        input[1].Invoke(fmt.Sprintf("[%x]", ciphertext))
+          input[1].Invoke(fmt.Sprintf("[%x]", ciphertext))
 
-     }
+      }
 
 
 - [ ] rebuild the wasm file
