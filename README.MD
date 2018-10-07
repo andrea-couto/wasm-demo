@@ -18,11 +18,11 @@
 
 <br>
 
-<center>In order to pass values from go to javascript we need syscall/js package
+###In order to pass values from go to javascript we need syscall/js package
 
-HOWEVER, goland is prohibiting us from using syscall/js until we set default
+###HOWEVER, goland is prohibiting us from using syscall/js until we set default
 
-OS and ARCH to JS, WASM<br><br></center>
+###OS and ARCH to JS, WASM<br><br>
 
 
 - [ ] Open up syscall/js under external libraries
