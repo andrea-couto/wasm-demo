@@ -16,14 +16,13 @@
 
 - [ ] Build and run the server
 
-<br><br>
+<br>
 
-
-In order to pass values from go to javascript we need syscall/js package
+<center>In order to pass values from go to javascript we need syscall/js package
 
 HOWEVER, goland is prohibiting us from using syscall/js until we set default
 
-OS and ARCH to JS, WASM<br><br>
+OS and ARCH to JS, WASM<br><br></center
 
 
 - [ ] Open up syscall/js under external libraries
@@ -50,13 +49,13 @@ OS and ARCH to JS, WASM<br><br>
 
 - [ ] Create a convert function
 
-     function convert() {
+      function convert() {
 
-         let input = document.querySelector('#input').value;
+           let input = document.querySelector('#input').value;
 
-         encrypt(input, output);
+           encrypt(input, output);
 
-     }
+      }
 
 - [ ] change button to be convert() and removed disabled
 
@@ -94,7 +93,7 @@ OS and ARCH to JS, WASM<br><br>
 
 - [ ] rebuild the wasm file
 
-``` go build -o main.wasm main.go```
+    ``` go build -o main.wasm main.go```
 
 - [ ] rerun the server
 
