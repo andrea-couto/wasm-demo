@@ -16,14 +16,14 @@
 
 - [ ] Build and run the server
 
-
+<br><br>
 
 
 In order to pass values from go to javascript we need syscall/js package
 
 HOWEVER, goland is prohibiting us from using syscall/js until we set default
 
-OS and ARCH to JS, WASM
+OS and ARCH to JS, WASM<br><br>
 
 
 - [ ] Open up syscall/js under external libraries
@@ -42,11 +42,11 @@ OS and ARCH to JS, WASM
 
 - [ ]  Create place to take in input
 
-    <textarea id="input" placeholder="Enter your plaintext"></textarea><br>
+    ```<textarea id="input" placeholder="Enter your plaintext"></textarea><br>```
 
 - [ ] Create a place to put ciphertext (AKA output)
 
-    <div id="output"></div><br>
+    ```<div id="output"></div><br>```
 
 - [ ] Create a convert function
 
@@ -72,7 +72,6 @@ OS and ARCH to JS, WASM
 
 - [ ] make an encrypt function
 
-
       func encrypt (input []js.Value) {
 
           PrivateKey, _ := rsa.GenerateKey(rand.Reader, 1000)
@@ -92,7 +91,6 @@ OS and ARCH to JS, WASM
           input[1].Invoke(fmt.Sprintf("[%x]", ciphertext))
 
       }
-
 
 - [ ] rebuild the wasm file
 
