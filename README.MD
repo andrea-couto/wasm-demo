@@ -32,11 +32,11 @@
 
 [] Make a channel and JS callback in main
 
-	```c := make(chan struct{},0)
+	c := make(chan struct{},0)
 
 	js.Global().Set("encrypt", js.NewCallback(encrypt))
 
-	<-c```
+	<-c
 
 []  Create place to take in input
 
@@ -48,13 +48,13 @@
 
 [] Create a convert function
 
-    ```function convert() {
+    function convert() {
 
         let input = document.querySelector('#input').value;
 
         encrypt(input, output);
 
-    }```
+    }
 
 [] change button to be convert() and removed disabled
 
@@ -62,17 +62,18 @@
 
 [] Create a output function to get the innerHtml
 
-    ```
+
     function output(ciphertext) {
 
         document.querySelector('#output').innerHTML = ciphertext;\
 
     }
-    ```
+
 
 [] make an encrypt function
 
-    ```func encrypt (input []js.Value) {
+
+    func encrypt (input []js.Value) {
 
         PrivateKey, _ := rsa.GenerateKey(rand.Reader, 1000)
 
@@ -90,7 +91,8 @@
 
         input[1].Invoke(fmt.Sprintf("[%x]", ciphertext))
 
-     }```
+     }
+
 
 [] rebuild the wasm file
 
