@@ -22,7 +22,7 @@
 
 HOWEVER, goland is prohibiting us from using syscall/js until we set default
 
-OS and ARCH to JS, WASM<br><br></center
+OS and ARCH to JS, WASM<br><br></center>
 
 
 - [ ] Open up syscall/js under external libraries
