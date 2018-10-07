@@ -18,7 +18,9 @@
 
 
     In order to pass values from go to javascript we need syscall/js package
+
     HOWEVER, goland is prohibiting us from using syscall/js until we set default
+
     OS and ARCH to JS, WASM
 
 
@@ -31,7 +33,9 @@
 - [ ] Make a channel and JS callback in main
 
 	c := make(chan struct{},0)
+
 	js.Global().Set("encrypt", js.NewCallback(encrypt))
+
 	<-c
 
 - [ ]  Create place to take in input
@@ -45,8 +49,11 @@
 - [ ] Create a convert function
 
     function convert() {
+
         let input = document.querySelector('#input').value;
+
         encrypt(input, output);
+
     }
 
 - [ ] change button to be convert() and removed disabled
@@ -55,24 +62,33 @@
 
 - [ ] Create a output function to get the innerHtml
 
-
     function output(ciphertext) {
-        document.querySelector('#output').innerHTML = ciphertext;\
-    }
 
+        document.querySelector('#output').innerHTML = ciphertext;
+
+    }
 
 - [ ] make an encrypt function
 
 
     func encrypt (input []js.Value) {
+
         PrivateKey, _ := rsa.GenerateKey(rand.Reader, 1000)
+
         PublicKey := &PrivateKey.PublicKey
+
         message := input[0].String()
+
         byteMessage := []byte(message)
+
         label := []byte("")
+
         hash := sha256.New()
+
         ciphertext, _ := rsa.EncryptOAEP(hash, rand.Reader, PublicKey, byteMessage, label)
+
         input[1].Invoke(fmt.Sprintf("[%x]", ciphertext))
+
      }
 
 
